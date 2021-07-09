@@ -3,13 +3,13 @@ resource "hcloud_ssh_key" "default" {
   public_key = file("./secrets/id_rsa.pub")
 }
 
-data "hcloud_image" "image1" {
+data "hcloud_image" "webserver" {
   with_selector = "is_custom==true"
   most_recent   = true
 }
 
-resource "hcloud_firewall" "firewall1" {
-  name = "default_firewall"
+resource "hcloud_firewall" "web_and_ssh" {
+  name = "web_and_ssh"
   rule {
     direction  = "in"
     protocol   = "tcp"
@@ -30,10 +30,10 @@ resource "hcloud_firewall" "firewall1" {
   }
 }
 
-resource "hcloud_server" "node1" {
-  name         = "node1"
+resource "hcloud_server" "webserver" {
+  name         = "webserver"
   server_type  = "cx11"
   ssh_keys     = [resource.hcloud_ssh_key.default.id]
-  firewall_ids = [hcloud_firewall.firewall1.id]
-  image        = data.hcloud_image.image1.id
+  firewall_ids = [hcloud_firewall.web_and_ssh.id]
+  image        = data.hcloud_image.webserver.id
 }

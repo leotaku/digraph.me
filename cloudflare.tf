@@ -9,8 +9,8 @@ resource "cloudflare_record" "digraph_me" {
   proxied = true
   ttl     = 1
   type    = "A"
-  value   = hcloud_server.node1.ipv4_address
   zone_id = cloudflare_zone.digraph_me.id
+  value   = hcloud_server.webserver.ipv4_address
 }
 
 resource "cloudflare_record" "raw_digraph_me" {
@@ -18,6 +18,6 @@ resource "cloudflare_record" "raw_digraph_me" {
   proxied = false
   ttl     = 1
   type    = "A"
-  value   = hcloud_server.node1.ipv4_address
   zone_id = cloudflare_zone.digraph_me.id
+  value   = hcloud_server.webserver.ipv4_address
 }
