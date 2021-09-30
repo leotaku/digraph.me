@@ -6,7 +6,6 @@ source "hcloud" "ubuntu" {
   location        = "hel1"
   server_type     = "cx11"
   image           = "ubuntu-20.04"
-  token           = var.hcloud_token
   ssh_username    = "root"
   snapshot_labels = { is_custom : true }
 }
