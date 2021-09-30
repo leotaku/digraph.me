@@ -1,3 +1,5 @@
+provider "hcloud" {}
+
 resource "hcloud_ssh_key" "default" {
   name       = "default"
   public_key = file("./secrets/id_rsa.pub")
