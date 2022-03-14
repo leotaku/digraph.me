@@ -2,7 +2,7 @@ provider "cloudflare" {}
 
 data "cloudflare_zones" "digraph_me" {
   filter {
-    name = "digraph.me"
+    name   = "digraph.me"
     status = "active"
   }
 }
