@@ -2,16 +2,16 @@ packer {
   required_version = "~> 1.7"
 }
 
-source "hcloud" "ubuntu" {
+source "hcloud" "debian" {
   location        = "hel1"
   server_type     = "cx11"
-  image           = "ubuntu-20.04"
+  image           = "debian-11"
   ssh_username    = "root"
   snapshot_labels = { is_custom : true }
 }
 
 build {
-  sources = ["source.hcloud.ubuntu"]
+  sources = ["source.hcloud.debian"]
 
   provisioner "shell" {
     script = "setup.sh"
