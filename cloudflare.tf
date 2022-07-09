@@ -29,3 +29,14 @@ resource "cloudflare_record" "google_search_digraph_me" {
   value   = "google-site-verification=FfBK-ilG6TZVxXRvPXxuB77Mn9xz8FuJJcBIZYOXgX0"
   zone_id = data.cloudflare_zone.digraph_me.id
 }
+
+resource "cloudflare_page_rule" "page_rules_digraph_me" {
+  zone_id  = data.cloudflare_zone.digraph_me.id
+  target   = "digraph.me/*"
+  priority = 1
+
+  actions {
+    cache_level = "cache_everything"
+    automatic_https_rewrites = "off"
+  }
+}
