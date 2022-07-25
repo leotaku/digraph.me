@@ -36,7 +36,7 @@ resource "cloudflare_page_rule" "page_rules_digraph_me" {
   priority = 1
 
   actions {
-    cache_level = "cache_everything"
+    cache_level = "basic"
     automatic_https_rewrites = "off"
   }
 }
