@@ -1,0 +1,13 @@
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+ul {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+section {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}

@@ -21,4 +21,9 @@ build {
     source      = "Caddyfile"
     destination = "/etc/caddy/Caddyfile"
   }
+
+  provisioner "file" {
+    source      = "static/"
+    destination = "/var/web"
+  }
 }
