@@ -1,5 +1,10 @@
 packer {
-  required_version = "~> 1.7"
+  required_plugins {
+    hcloud = {
+      version = ">= 1.0.0"
+      source  = "github.com/hashicorp/hcloud"
+    }
+  }
 }
 
 source "hcloud" "debian" {
