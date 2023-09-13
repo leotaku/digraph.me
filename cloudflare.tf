@@ -1,7 +1,7 @@
 provider "cloudflare" {}
 
 data "cloudflare_zone" "digraph_me" {
-  name   = "digraph.me"
+  name = "digraph.me"
 }
 
 resource "cloudflare_record" "digraph_me" {
@@ -36,7 +36,7 @@ resource "cloudflare_page_rule" "page_rules_digraph_me" {
   priority = 1
 
   actions {
-    cache_level = "basic"
+    cache_level              = "basic"
     automatic_https_rewrites = "off"
   }
 }
