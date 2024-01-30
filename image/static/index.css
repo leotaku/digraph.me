@@ -11,3 +11,9 @@ section {
   margin-top: 16px;
   margin-bottom: 16px;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
