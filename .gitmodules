@@ -1,0 +1,3 @@
+[submodule "image/cosmopolitan"]
+	path = image/cosmopolitan
+	url = git@github.com:leotaku/cosmopolitan.git

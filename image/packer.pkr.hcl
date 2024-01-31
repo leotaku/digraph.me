@@ -18,17 +18,23 @@ source "hcloud" "debian" {
 build {
   sources = ["source.hcloud.debian"]
 
+  provisioner "file" {
+    source      = "cosmopolitan/o/asan/tool/net/redbean.com"
+    destination = "/usr/local/bin/"
+  }
+
+  provisioner "file" {
+    sources     = ["redbean.service", "redbean-certs.service"]
+    destination = "/etc/systemd/system/"
+  }
+
   provisioner "shell" {
     script = "setup.sh"
   }
 
   provisioner "file" {
-    source      = "Caddyfile"
-    destination = "/etc/caddy/Caddyfile"
+    source      = "static/"
+    destination = "/var/web/"
   }
 
-  provisioner "file" {
-    source      = "static/"
-    destination = "/var/web"
-  }
 }
