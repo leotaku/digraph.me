@@ -24,7 +24,7 @@ build {
   }
 
   provisioner "file" {
-    sources     = ["redbean.service", "redbean-certs.service"]
+    sources     = ["redbean.service", "certbot.service.d"]
     destination = "/etc/systemd/system/"
   }
 

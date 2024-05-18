@@ -12,4 +12,4 @@ mkdir -p /var/web
 
 # Enable services
 systemctl enable redbean
-systemctl enable redbean-certs
+systemctl enable certbot
