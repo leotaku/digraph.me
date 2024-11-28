@@ -4,7 +4,7 @@ build:
     image/cosmopolitan/build/bootstrap/make -C image/cosmopolitan MODE=asan o/asan/tool/net/redbean
     cd image && packer build .
 
-deploy:
+apply:
     terraform apply
 
 ssh:
