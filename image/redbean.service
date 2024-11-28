@@ -6,7 +6,7 @@ Requires=network-online.target
 
 [Service]
 Type=exec
-ExecStart=/usr/bin/env redbean.com -p 80 -p 443 -D /var/web \
+ExecStart=/usr/bin/env redbean -p 80 -p 443 -D /var/web \
    -C /etc/letsencrypt/live/digraph-ecdsa/fullchain.pem \
    -K /etc/letsencrypt/live/digraph-ecdsa/privkey.pem
 TimeoutStopSec=5s

@@ -19,7 +19,7 @@ build {
   sources = ["source.hcloud.debian"]
 
   provisioner "file" {
-    source      = "cosmopolitan/o/asan/tool/net/redbean.com"
+    source      = "cosmopolitan/o/asan/tool/net/redbean"
     destination = "/usr/local/bin/"
   }
 

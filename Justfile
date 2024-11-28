@@ -1,10 +1,8 @@
 ssh := "ssh -i secrets/id_rsa -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 
 build:
-    cd image/cosmopolitan && \
-    build/bootstrap/make.com MODE=asan o/asan/tool/net/redbean.com
-    cd image && \
-    packer build .
+    image/cosmopolitan/build/bootstrap/make -C image/cosmopolitan MODE=asan o/asan/tool/net/redbean
+    cd image && packer build .
 
 deploy:
     terraform apply
