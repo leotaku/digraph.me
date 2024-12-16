@@ -1,4 +1,4 @@
-ssh := "ssh -i secrets/id_rsa -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
+ssh := "ssh -i secrets/id_rsa -o PasswordAuthentication=no -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 
 build:
     cd image && \
