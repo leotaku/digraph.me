@@ -9,7 +9,7 @@ resource "cloudflare_record" "digraph_me" {
   proxied = true
   ttl     = 1
   type    = "A"
-  value   = hcloud_server.webserver.ipv4_address
+  content = hcloud_server.webserver.ipv4_address
   zone_id = data.cloudflare_zone.digraph_me.id
 }
 
@@ -18,7 +18,7 @@ resource "cloudflare_record" "raw_digraph_me" {
   proxied = false
   ttl     = 1
   type    = "A"
-  value   = hcloud_server.webserver.ipv4_address
+  content = hcloud_server.webserver.ipv4_address
   zone_id = data.cloudflare_zone.digraph_me.id
 }
 
@@ -26,7 +26,7 @@ resource "cloudflare_record" "google_search_digraph_me" {
   name    = "@"
   ttl     = 1
   type    = "TXT"
-  value   = "google-site-verification=FfBK-ilG6TZVxXRvPXxuB77Mn9xz8FuJJcBIZYOXgX0"
+  content = "google-site-verification=FfBK-ilG6TZVxXRvPXxuB77Mn9xz8FuJJcBIZYOXgX0"
   zone_id = data.cloudflare_zone.digraph_me.id
 }
 
