@@ -9,7 +9,7 @@ packer {
 
 source "hcloud" "debian" {
   location        = "hel1"
-  server_type     = "cx11"
+  server_type     = "cax11"
   image           = "debian-12"
   ssh_username    = "root"
   snapshot_labels = { is_custom : true }

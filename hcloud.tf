@@ -6,8 +6,9 @@ resource "hcloud_ssh_key" "default" {
 }
 
 data "hcloud_image" "webserver" {
-  with_selector = "is_custom==true"
-  most_recent   = true
+  with_selector     = "is_custom==true"
+  with_architecture = "arm"
+  most_recent       = true
 }
 
 resource "hcloud_firewall" "web_and_ssh" {
@@ -34,7 +35,7 @@ resource "hcloud_firewall" "web_and_ssh" {
 
 resource "hcloud_server" "webserver" {
   name         = "webserver"
-  server_type  = "cx11"
+  server_type  = "cax11"
   ssh_keys     = [resource.hcloud_ssh_key.default.id]
   firewall_ids = [hcloud_firewall.web_and_ssh.id]
   image        = data.hcloud_image.webserver.id
