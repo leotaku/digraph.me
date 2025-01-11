@@ -2,6 +2,7 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  text-align: center;
 }
 ul {
   margin-top: 8px;
