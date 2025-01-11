@@ -13,6 +13,12 @@ curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo 
 sudo -E apt-get -y update
 sudo -E apt-get -y install caddy
 
+# Configure unattended upgrades
+sudo -E apt-get -y update
+sudo -E apt-get -y install unattended-upgrades apt-listchanges
+echo unattended-upgrades unattended-upgrades/enable_auto_updates boolean true | debconf-set-selections
+dpkg-reconfigure -f noninteractive unattended-upgrades
+
 # Create files
 mkdir -p /var/web
 
