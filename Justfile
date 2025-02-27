@@ -7,8 +7,8 @@ build:
 apply:
     terraform apply
 
-ssh:
-    {{ssh}} root@raw.digraph.me
+ssh *args:
+    {{ssh}} root@raw.digraph.me {{args}}
 
 put source target *args:
     rsync -rL "{{source}}" root@raw.digraph.me:"{{target}}" -e "{{ssh}}" --info "progress2" {{args}}
