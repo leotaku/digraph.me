@@ -27,8 +27,12 @@ build {
     destination = "/etc/caddy/Caddyfile"
   }
 
+  provisioner "shell" {
+    inline = ["mkdir -p /var/web"]
+  }
+
   provisioner "file" {
     source      = "static/"
-    destination = "/var/web"
+    destination = "/var/web/"
   }
 }
