@@ -1,4 +1,13 @@
-raw.digraph.me, digraph.me
+{
+	auto_https disable_redirects
+}
 
-root * /var/web
-file_server browse
+raw.digraph.me, digraph.me {
+	root * /var/web
+	file_server browse
+}
+
+http://raw.digraph.me, http://digraph.me {
+	root * /var/web
+	file_server browse
+}
