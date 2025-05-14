@@ -12,3 +12,6 @@ ssh *args:
 
 put source target *args:
     rsync -rL "{{source}}" root@raw.digraph.me:"{{target}}" -e "{{ssh}}" --info "progress2" {{args}}
+
+get source target *args:
+    rsync -rL root@raw.digraph.me:"{{source}}" "{{target}}" -e "{{ssh}}" --info "progress2" {{args}}
